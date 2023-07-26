@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "t-tag": "tdesign-miniprogram/tag/tag"
+    "t-row": "tdesign-miniprogram/row/row",
+    "t-col": "tdesign-miniprogram/col/col",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
   }
 }
