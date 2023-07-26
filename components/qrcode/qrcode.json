@@ -1,4 +1,7 @@
 {
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "t-textarea": "tdesign-miniprogram/textarea/textarea",
+        "qr-container": "wx-qr"
+    }
 }

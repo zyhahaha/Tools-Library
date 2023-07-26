@@ -11,7 +11,8 @@ Component({
      * 组件的初始数据
      */
     data: {
-
+        style: 'height: 248rpx',
+        qrTxt: 'https://github.com/liuxdi/wx-qr'
     },
 
     /**

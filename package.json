@@ -4,7 +4,8 @@
   "description": "",
   "main": ".eslintrc.js",
   "dependencies": {
-    "tdesign-miniprogram": "^1.1.14"
+    "tdesign-miniprogram": "^1.1.14",
+    "wx-qr": "^0.1.2"
   },
   "devDependencies": {},
   "scripts": {
