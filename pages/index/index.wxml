@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <t-tag theme="primary">重要</t-tag>
+</view>
