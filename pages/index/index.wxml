@@ -10,7 +10,14 @@
   >
     <t-tab-panel label="房贷计算器" value="0" style="{{tabPanelstyle}}">
       <view class="loans">
+        <view style="font-weight: bold; font-size: 20px; margin-bottom: 10px;">房贷计算器（商业贷款）（等额本息）</view>
+        <t-button theme="primary" size="small" tap="onHandlerDdvanced">切换提前还款计算功能</t-button>
 
+        <t-input size="small" prefixIcon="app" label="贷款（万元）：" placeholder="请输入文字" />
+        <t-input size="small" prefixIcon="app" label="年限（最多30年）：" placeholder="请输入文字" />
+        <t-input size="small" prefixIcon="app" label="利率（默认5.88）：" placeholder="请输入文字" />
+
+        <t-button theme="primary" size="small" tap="onHandlerDdvanced">计算</t-button>
       </view>
     </t-tab-panel>
     <t-tab-panel label="二维码" value="1" style="{{tabPanelstyle}}">选项二内容</t-tab-panel>

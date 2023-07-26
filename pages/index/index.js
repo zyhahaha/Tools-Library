@@ -13,6 +13,9 @@ Page({
       })
     }
   },
+  onHandlerDdvanced() {
+    console.log('xxx')
+  },
   onTabsChange(event) {
     console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
   },
