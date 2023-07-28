@@ -5,6 +5,8 @@
     <t-input size="small" prefixIcon="time" label="年限：" placeholder="请输入" />
     <t-input size="small" prefixIcon="chart-pie" label="利率：" placeholder="请输入" />
     <view style="padding-top: 20rpx; text-align: center;">
-        <t-button theme="primary" size="small" bind:tap="onHandlerDdvanced" style="width: 100%;">计 算</t-button>
+        <t-button theme="primary" size="small" bind:tap="onHandlerDdvanced" style="width: 100%;">
+            计 算
+        </t-button>
     </view>
 </view>

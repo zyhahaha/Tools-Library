@@ -5,19 +5,20 @@
     padding-top: 20rpx;
 }
 .qrcode-content {
+    padding-top: 20rpx;
     /* position: absolute; */
 }
-.textarea-example {
+.qrcode-textarea {
     padding: 32rpx 32rpx 48rpx;
     background-color: #fff;
 }
 
-.external-class {
+.qrcode-textarea__t {
     padding-top: 24rpx !important;
     padding-bottom: 24rpx !important;
 }
 
-.textarea-example__label {
+.qrcode-textarea__label {
     display: block;
     color: rgba(0, 0, 0, 0.9);
     font-size: 24rpx;
