@@ -10,6 +10,8 @@
         </t-button>
     </view>
     <view class="qrcode-content">
-        <qr-container text="{{ qrTxt }}" size="200"></qr-container>
+        <view style="margin: 0 auto;">
+            <qr-container text="{{ qrTxt }}" size="200"></qr-container>
+        </view>
     </view>
 </view>
