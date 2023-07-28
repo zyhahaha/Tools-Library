@@ -14,7 +14,36 @@ Component({
         dataList: [],
         debtMoney: 0,
         periods: 0, // 年限
-        rate: 0.00 // 利率
+        rate: 0.00, // 利率
+
+        tableHeader: [
+            {
+                prop: 'index',
+                width: 110,
+                label: '期数'
+                // color: '#55C355'
+            },
+            {
+                prop: 'repaymentMonth',
+                width: 152,
+                label: '月供'
+            },
+            {
+                prop: 'debtMoneyMonth',
+                width: 152,
+                label: '本金'
+            },
+            {
+                prop: 'interestMonth',
+                width: 110,
+                label: '利息'
+            },
+            {
+                prop: 'remainDebtMoneyTotal',
+                width: 150,
+                label: '剩余'
+            }
+        ]
     },
 
     /**

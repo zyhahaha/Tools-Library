@@ -4,6 +4,7 @@
   "description": "",
   "main": ".eslintrc.js",
   "dependencies": {
+    "miniprogram-table-component": "^1.1.0",
     "tdesign-miniprogram": "^1.1.14",
     "wx-qr": "^0.1.2"
   },

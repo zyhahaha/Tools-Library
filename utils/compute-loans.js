@@ -17,8 +17,8 @@ export function computeMoneyFn(debtMoneyTotalOrigin, _periods, _rate) {
     // var debtMoneyTotalOrigin = 1111100000;
     // var monthRate = 0.0588 / 12;
     // var monthTotal = 30 * 12;
-    monthRate = _rate / 12;
-    monthTotal = _periods * 12
+    let monthRate = _rate / 12;
+    let monthTotal = _periods * 12
     /**
      * 计算总共要还多少钱
      * @param debtMoneyTotalParam 贷了多少钱
