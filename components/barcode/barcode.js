@@ -10,7 +10,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-        codeResult: 'xxx'
+        codeResult: ''
     },
 
     /**
@@ -26,7 +26,7 @@ Component({
         },
         onCopyText() {
             wx.setClipboardData({
-                data: this.codeResult,
+                data: this.data.codeResult,
                 success: res => {
                     wx.getClipboardData({
                         success: res => {
