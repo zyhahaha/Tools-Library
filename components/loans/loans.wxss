@@ -1,1 +1,3 @@
-/* components/loans.wxss */
+.loans {
+    padding-top: 20rpx;
+}
