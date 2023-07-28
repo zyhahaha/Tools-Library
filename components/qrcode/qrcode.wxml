@@ -2,14 +2,14 @@
     <view style="font-weight: bold; font-size: 20px; margin-bottom: 10px;">二维码生成</view>
     <view class="qrcode-textarea">
         <text class="qrcode-textarea__label">标签文字</text>
-        <t-textarea t-class="qrcode-textarea__t" placeholder="请输入文字" bordered maxlength="100" disableDefaultPadding="{{true}}" indicator style="{{style}}" />
+        <t-textarea t-class="qrcode-textarea__t" placeholder="请输入文字" bordered maxlength="200" disableDefaultPadding="{{true}}" indicator />
     </view>
     <view class="qrcode-btn">
-        <t-button theme="primary" size="small" bind:tap="onHandlerDdvanced" style="width: 100%;">
+        <t-button theme="primary" size="small" bind:tap="onGenerateQrcode" style="width: 100%;">
             生 成
         </t-button>
     </view>
     <view class="qrcode-content">
-        <qr-container text="{{qrTxt}}" size="200"></qr-container>
+        <qr-container text="{{ qrTxt }}" size="200"></qr-container>
     </view>
 </view>

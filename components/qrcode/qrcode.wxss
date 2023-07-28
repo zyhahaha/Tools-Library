@@ -14,6 +14,7 @@
 }
 
 .qrcode-textarea__t {
+    height: 248rpx;
     padding-top: 24rpx !important;
     padding-bottom: 24rpx !important;
 }
