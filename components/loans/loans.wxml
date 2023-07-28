@@ -1,9 +1,9 @@
 <view class="loans">
     <view style="font-weight: bold; font-size: 36rpx; margin-bottom: 20rpx;">房贷计算器（商业贷款）（等额本息）</view>
-    <t-button theme="primary" ghost size="small">切换提前还款计算功能</t-button>
+    <!-- <t-button theme="primary" ghost size="small">切换提前还款计算功能</t-button> -->
     <t-input bind:change="onChangeDebtMoneyValue" size="small" prefixIcon="money-circle" label="贷款：" placeholder="请输入（万元）" />
-    <t-input bind:change="onChangePeriodsValue" size="small" prefixIcon="time" label="年限：" placeholder="请输入" />
-    <t-input bind:change="onChangeRateValue" size="small" prefixIcon="chart-pie" label="利率：" placeholder="请输入" />
+    <t-input bind:change="onChangePeriodsValue" size="small" prefixIcon="time" label="年限：" placeholder="请输入（年）" />
+    <t-input bind:change="onChangeRateValue" size="small" prefixIcon="chart-pie" label="利率：" placeholder="请输入（年利率）如：5.88" />
     <view style="padding: 20rpx 0rpx; text-align: center;">
         <t-button theme="primary" size="small" bind:tap="onCompute" style="width: 100%;">
             计 算

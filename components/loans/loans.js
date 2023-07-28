@@ -56,6 +56,10 @@ Component({
             var rate = this.data.rate / 100
             console.log(debtMoney, periods, rate)
             const dataList = computeMoneyFn(debtMoney, periods, rate)
+            dataList.forEach((item, index) => {
+                item.index = index + 1
+                item.remainDebtMoneyTotal = `${item.remainDebtMoneyTotal}W`
+            })
             this.setData({
                 dataList
             })
