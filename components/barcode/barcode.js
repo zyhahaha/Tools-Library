@@ -10,7 +10,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-
+        codeResult: 'xxx'
     },
 
     /**
@@ -19,7 +19,23 @@ Component({
     methods: {
         onScanCode() {
             wx.scanCode().then(res => {
-                console.log(res.result)
+                this.setData({
+                    codeResult: res.result
+                })
+            })
+        },
+        onCopyText() {
+            wx.setClipboardData({
+                data: this.codeResult,
+                success: res => {
+                    wx.getClipboardData({
+                        success: res => {
+                            wx.showToast({
+                                title: '复制成功'
+                            })
+                        }
+                    })
+                }
             })
         }
     }

@@ -1,4 +1,5 @@
 <view class="barcode">
-    <view style="text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 10px;">条形码 / 二维码 / 解析</view>
+    <view class="barcode-title">条形码 / 二维码 / 解析</view>
     <t-icon name="scan" size="200rpx" data-name="scan" bind:click="onScanCode" />
+    <view class="scan-result" bindtap='onCopyText'>{{ codeResult }}</view>
 </view>

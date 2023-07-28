@@ -1,3 +1,15 @@
 .barcode {
     padding: 20rpx;
 }
+
+.barcode-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+}
+
+.scan-result {
+    padding-top: 20rpx;
+    text-align: center;
+}
