@@ -1,6 +1,12 @@
 .qrcode {
     padding: 20rpx;
 }
+.qrcode-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+}
 .qrcode-btn {
     padding-top: 20rpx;
 }

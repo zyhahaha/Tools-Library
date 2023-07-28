@@ -1,7 +1,7 @@
 <view class="qrcode">
-    <view style="font-weight: bold; font-size: 36rpx; margin-bottom: 20rpx;">二维码生成</view>
+    <view class="qrcode-title">二维码生成</view>
     <view class="qrcode-textarea">
-        <text class="qrcode-textarea__label">标签文字</text>
+        <text class="qrcode-textarea__label">二维码内容</text>
         <t-textarea bind:change="onChangeValue" t-class="qrcode-textarea__t" placeholder="请输入文字" bordered maxlength="200" disableDefaultPadding="{{true}}" indicator />
     </view>
     <view class="qrcode-btn">
