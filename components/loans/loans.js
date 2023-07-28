@@ -51,7 +51,11 @@ Component({
      */
     methods: {
         onCompute() {
-            const dataList = computeMoneyFn(this.data.debtMoney, this.data.periods, this.data.rate)
+            var debtMoney = this.data.debtMoney * 10000
+            var periods = Number(this.data.periods)
+            var rate = this.data.rate / 100
+            console.log(debtMoney, periods, rate)
+            const dataList = computeMoneyFn(debtMoney, periods, rate)
             this.setData({
                 dataList
             })

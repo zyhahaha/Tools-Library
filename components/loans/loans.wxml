@@ -15,5 +15,6 @@
         data="{{ dataList }}" 
         stripe="{{ true }}"
         border="{{ false }}"
+        height="{{ '500rpx' }}"
     />
 </view>
