@@ -1,15 +1,14 @@
 <!-- index.wxml -->
 <view class="container">
-    <t-tabs sticky defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
-        <t-tab-panel label="房贷计算器" value="0" style="{{tabPanelstyle}}">
+    <t-tabs sticky value="{{ tabValue }}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
+        <t-tab-panel label="房贷计算器" value="0">
             <loans />
         </t-tab-panel>
-        <t-tab-panel label="二维码" value="1" style="{{tabPanelstyle}}">
-            <qrcode />
+        <t-tab-panel label="二维码" value="1">
+            <qrcode wx:if="{{ tabValue === '1' }}" />
         </t-tab-panel>
-        <t-tab-panel label="条纹码" value="2" style="{{tabPanelstyle}}">
-            <barcode />
+        <t-tab-panel label="解析" value="2">
+            <barcode wx:if="{{ tabValue === '2' }}" />
         </t-tab-panel>
-        <!-- <t-tab-panel label="其他" value="3" style="{{tabPanelstyle}}">选项四内容</t-tab-panel> -->
     </t-tabs>
 </view>

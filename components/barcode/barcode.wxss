@@ -1,1 +1,3 @@
-/* components/barcode/barcode.wxss */
+.barcode {
+    padding: 20rpx;
+}

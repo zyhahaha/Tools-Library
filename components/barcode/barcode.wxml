@@ -1,6 +1,4 @@
-<view class="qrcode">
-    <view style="font-weight: bold; font-size: 20px; margin-bottom: 10px;">条形码生成 / 解析</view>
-    <t-input size="small" prefixIcon="app" label="数字" placeholder="请输入数字" />
-    <t-button theme="primary" size="small" bind:tap="onHandlerDdvanced">计算</t-button>
-    <canvas canvas-id="barcode" />
+<view class="barcode">
+    <view style="text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 10px;">条形码 / 二维码 / 解析</view>
+    <t-icon name="scan" size="200rpx" data-name="scan" bind:click="onScanCode" />
 </view>

@@ -1,5 +1,11 @@
 .qrcode {
-    width: 100%;
+    padding: 20rpx;
+}
+.qrcode-btn {
+    padding-top: 20rpx;
+}
+.qrcode-content {
+    /* position: absolute; */
 }
 .textarea-example {
     padding: 32rpx 32rpx 48rpx;

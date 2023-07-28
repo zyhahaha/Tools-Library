@@ -1,11 +1,13 @@
 <view class="qrcode">
-    <view style="font-weight: bold; font-size: 20px; margin-bottom: 10px;">二维码生成 / 解析</view>
+    <view style="font-weight: bold; font-size: 20px; margin-bottom: 10px;">二维码生成</view>
     <view class="textarea-example">
         <text class="textarea-example__label">标签文字</text>
         <t-textarea t-class="external-class" placeholder="请输入文字" bordered maxlength="100" disableDefaultPadding="{{true}}" indicator style="{{style}}" />
     </view>
-    <view>
-        <!-- <qr-container text="{{qrTxt}}" size="200"></qr-container> -->
+    <view class="qrcode-btn">
+        <t-button theme="primary" size="small" tap="onHandlerDdvanced" style="width: 100%;">生 成</t-button>
     </view>
-    <!-- <t-button theme="primary" size="small" tap="onHandlerDdvanced">计算</t-button> -->
+    <view class="qrcode-content">
+        <qr-container text="{{qrTxt}}" size="200"></qr-container>
+    </view>
 </view>

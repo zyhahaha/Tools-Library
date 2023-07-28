@@ -2,6 +2,7 @@
     "component": true,
     "usingComponents": {
         "t-textarea": "tdesign-miniprogram/textarea/textarea",
+        "t-button": "tdesign-miniprogram/button/button",
         "qr-container": "wx-qr"
     }
 }

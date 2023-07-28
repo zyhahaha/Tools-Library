@@ -4,7 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    tabPanelstyle: 'display:flex;justify-content:center;align-items:center;',
+    tabValue: '0'
+    // tabPanelstyle: 'display:flex;justify-content:center;align-items:center;',
   },
   onLoad() {
     if (wx.getUserProfile) {
@@ -17,6 +18,9 @@ Page({
     console.log('xxx')
   },
   onTabsChange(event) {
+    this.setData({
+      tabValue: event.detail.value,
+    });
     console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
   },
 
