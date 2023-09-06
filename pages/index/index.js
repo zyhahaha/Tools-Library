@@ -12,10 +12,10 @@ Page({
         title: '房贷计算器（等额本息）',
         index: '0'
       }, {
-        title: '条形码 / 二维码 / 解析',
+        title: '二维码生成',
         index: '1'
       }, {
-        title: '解析',
+        title: '解析二维码',
         index: '2'
       }
     ]

@@ -6,7 +6,7 @@
             {{ tabName }}
         </view>
     </view>
-    <t-tabs sticky value="{{ tabValue }}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
+    <t-tabs sticky swipeable="{{ false }}" value="{{ tabValue }}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
         <t-tab-panel label="房贷计算器" value="0">
             <loans />
         </t-tab-panel>
