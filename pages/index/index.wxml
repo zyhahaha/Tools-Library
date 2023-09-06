@@ -1,5 +1,11 @@
 <!-- index.wxml -->
 <view class="container">
+    <view class="search-wrap">
+        <t-icon name="menu-fold" size="48rpx" style="margin-top: 13rpx;" bind:click="onOpenDrawer" />
+        <view class="container-title">
+            {{ tabName }}
+        </view>
+    </view>
     <t-tabs sticky value="{{ tabValue }}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
         <t-tab-panel label="房贷计算器" value="0">
             <loans />
@@ -11,4 +17,7 @@
             <barcode wx:if="{{ tabValue === '2' }}" />
         </t-tab-panel>
     </t-tabs>
+
+    <!-- 抽屉 -->
+    <t-drawer visible="{{ drawerVisible }}" placement="left" items="{{ sideMenuList }}" bind:item-click="onClickDrawerItem"></t-drawer>
 </view>

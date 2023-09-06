@@ -1,3 +1,9 @@
 .loans {
     padding: 20rpx;
 }
+/* .loans-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+} */
