@@ -4,7 +4,9 @@ Component({
      * 组件的属性列表
      */
     properties: {
-
+        tableHeight: {
+            type: Number
+        }
     },
 
     /**
@@ -16,6 +18,7 @@ Component({
         periods: 0, // 年限
         rate: 0.00, // 利率
 
+        // width总和：750 - padding(20 * 2 = 40) = 710
         tableHeader: [
             {
                 prop: 'index',
@@ -25,17 +28,17 @@ Component({
             },
             {
                 prop: 'repaymentMonth',
-                width: 152,
+                width: 150,
                 label: '月供'
             },
             {
                 prop: 'debtMoneyMonth',
-                width: 152,
+                width: 150,
                 label: '本金'
             },
             {
                 prop: 'interestMonth',
-                width: 110,
+                width: 150,
                 label: '利息'
             },
             {

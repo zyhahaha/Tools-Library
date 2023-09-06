@@ -11,10 +11,11 @@
     </view>
 
     <table-view 
+        wx:if="{{ tableHeight }}"
         headers="{{ tableHeader }}" 
         data="{{ dataList }}" 
         stripe="{{ true }}"
         border="{{ false }}"
-        height="{{ '500rpx' }}"
+        height="{{ tableHeight - 5 + 'px' }}"
     />
 </view>

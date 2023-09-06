@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    tableHeight: 0,
     drawerVisible: false,
     tabName: '房贷计算器（等额本息）',
     tabValue: '0',
@@ -25,11 +26,9 @@ Page({
     // tabPanelstyle: 'display:flex;justify-content:center;align-items:center;',
   },
   onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
+    this.setData({
+        tableHeight: wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().statusBarHeight
+    })
   },
   onOpenDrawer() {
     this.setData({
