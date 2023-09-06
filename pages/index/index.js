@@ -10,12 +10,15 @@ Page({
     sideMenuList: [
       {
         title: '房贷计算器（等额本息）',
+        icon: 'money-circle',
         index: '0'
       }, {
         title: '二维码生成',
+        icon: 'qrcode',
         index: '1'
       }, {
         title: '解析二维码',
+        icon: 'scan',
         index: '2'
       }
     ]

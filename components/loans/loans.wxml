@@ -1,5 +1,5 @@
 <view class="loans">
-    <view class="loans-title">房贷计算器（等额本息）</view>
+    <!-- <view class="loans-title">房贷计算器（等额本息）</view> -->
     <!-- <t-button theme="primary" ghost size="small">切换提前还款计算功能</t-button> -->
     <t-input bind:change="onChangeDebtMoneyValue" size="small" prefixIcon="money-circle" label="贷款：" placeholder="请输入（万元）" />
     <t-input bind:change="onChangePeriodsValue" size="small" prefixIcon="time" label="年限：" placeholder="请输入（年）" />
