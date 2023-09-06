@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <view class="container">
     <view class="search-wrap">
-        <t-icon name="menu-fold" size="48rpx" style="margin-top: 13rpx;" bind:click="onOpenDrawer" />
+        <t-icon name="menu-fold" size="48rpx" style="margin-top: 10rpx;" bind:click="onOpenDrawer" />
         <view class="container-title">
             {{ tabName }}
         </view>
