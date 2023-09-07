@@ -10,6 +10,6 @@
         </t-button>
     </view>
     <view class="qrcode-content">
-        <qr-container text="{{ qrTxt }}" size="200"></qr-container>
+        <qr-container text="{{ qrTxt }}" size="200" bind:load="onLoadQr" bind:tap="onSaveQrImage"></qr-container>
     </view>
 </view>
