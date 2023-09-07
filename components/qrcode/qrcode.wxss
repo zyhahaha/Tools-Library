@@ -1,18 +1,11 @@
 .qrcode {
     padding: 20rpx;
 }
-/* .qrcode-title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 28rpx;
-    margin-bottom: 20rpx;
-} */
 .qrcode-btn {
     padding-top: 20rpx;
 }
 .qrcode-content {
-    padding-top: 20rpx;
-    /* position: absolute; */
+    padding-top: 35rpx;
 }
 .qrcode-textarea {
     padding: 32rpx 32rpx 48rpx;
@@ -31,4 +24,7 @@
     font-size: 24rpx;
     line-height: 40rpx;
     padding-bottom: 16rpx;
+}
+.qr-container {
+    margin: 0 auto !important;
 }
