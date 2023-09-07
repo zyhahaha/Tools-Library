@@ -84,4 +84,7 @@ function saveImageFn(imgUrl) {
             })
         }
     })
+    setTimeout(() => {
+        wx.hideLoading()
+    }, 3000)
 }
