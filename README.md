@@ -3,7 +3,7 @@
 
 # Screenshot
 ### 房贷计算器
-<div style="text-align: center;">
+<div align=center>
     <img src="https://github.com/zyhahaha/Tools-Library/blob/master/assets/screenshot/loans.png" width="350px">
 </div>
 
