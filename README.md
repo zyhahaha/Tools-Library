@@ -8,7 +8,11 @@
 </div>
 
 ### 二维码生成
-<img src="https://github.com/zyhahaha/Tools-Library/blob/master/assets/screenshot/qrcode.png" width="350px" align=center>
+<div align=center>
+    <img src="https://github.com/zyhahaha/Tools-Library/blob/master/assets/screenshot/qrcode.png" width="350px">
+</div>
 
 ### 二维码解析
-<img src="https://github.com/zyhahaha/Tools-Library/blob/master/assets/screenshot/qrcode_parse.png" width="350px">
+<div align=center>
+    <img src="https://github.com/zyhahaha/Tools-Library/blob/master/assets/screenshot/qrcode_parse.png" width="350px">
+</div>
