@@ -1,12 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Tools",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "paddlejs-plugin": {
+      "version": "2.0.1",
+      "provider": "wx7138a7bb793608c3"
+    }
+  }
 }

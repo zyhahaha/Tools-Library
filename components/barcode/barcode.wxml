@@ -3,6 +3,8 @@
     <t-icon name="scan" size="200rpx" data-name="scan" bind:click="onScanCode" />
     <view class="scan-result">{{ codeResult }}</view>
     <view style="padding-top: 20rpx; text-align: center;">
-        <t-button theme="primary" size="small" bind:tap="onCopyText" style="width: 200rpx;">复制</t-button>
+        <t-button theme="primary" size="small" bind:tap="chooseImage" style="width: 200rpx;">复制</t-button>
     </view>
+
+    <!-- <canvas canvas-id="myCanvas" class="myCanvas" style="height: 500rpx;width: 500rpx;"></canvas> -->
 </view>

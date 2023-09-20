@@ -4,11 +4,13 @@
   "description": "",
   "main": ".eslintrc.js",
   "dependencies": {
+    "@paddlejs/paddlejs-backend-webgl": "^1.0.7",
+    "@paddlejs/paddlejs-core": "^2.0.7",
     "miniprogram-table-component": "^1.1.0",
+    "paddlejs": "^1.0.17",
     "tdesign-miniprogram": "^1.1.14",
     "wx-qr": "^0.1.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
