@@ -21,6 +21,10 @@ Page({
         title: '解析二维码',
         icon: 'scan',
         index: '2'
+      }, {
+        title: '文字识别OCR',
+        icon: 'scan',
+        index: '3'
       }
     ]
     // tabPanelstyle: 'display:flex;justify-content:center;align-items:center;',

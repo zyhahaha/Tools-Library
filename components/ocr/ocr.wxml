@@ -1,0 +1,8 @@
+<view class="barcode">
+    <!-- <view class="barcode-title">条形码 / 二维码 / 解析</view> -->
+    <t-icon name="scan" size="200rpx" data-name="scan" bind:click="onScanCode" />
+    <view class="scan-result">{{ codeResult }}</view>
+    <view style="padding-top: 20rpx; text-align: center;">
+        <t-button theme="primary" size="small" bind:tap="onCopyText" style="width: 200rpx;">复制</t-button>
+    </view>
+</view>

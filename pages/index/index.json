@@ -6,6 +6,7 @@
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "loans": "/components/loans/loans",
     "qrcode": "/components/qrcode/qrcode",
-    "barcode": "/components/barcode/barcode"
+    "barcode": "/components/barcode/barcode",
+    "ocr": "/components/ocr/ocr"
   }
 }
