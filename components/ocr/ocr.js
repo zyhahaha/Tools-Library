@@ -1,41 +1,15 @@
-// const request = require('request')
 const AK = "oQAisqELmdywRfl665oClGF3"
 const SK = "blZ6gRKBcLeCHmylgh1kMfO6LT8PPGbG"
 
 function runOCRFn(imageData) {
-    // const options = {
-    //     'method': 'POST',
-    //     'url': 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic?access_token=' + await getAccessToken(),
-    //     'headers': {
-    //             'Content-Type': 'application/x-www-form-urlencoded',
-    //             'Accept': 'application/json'
-    //     },
-    //     form: {
-    //             'detect_direction': 'false',
-    //             'detect_language': 'false',
-    //             'paragraph': 'false',
-    //             'probability': 'false',
-    //             'image': imageData
-    //     }
-    // };
     return new Promise(async (resolve, reject) => {
         wx.request({
             url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic?access_token=' + await getAccessToken(),
             method: 'POST',
             'headers': {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json'
+                'content-type':'multipart/form-data; boundary=XXX',
             },
-            data: {
-                'detect_direction': 'false',
-                'detect_language': 'false',
-                'paragraph': 'false',
-                'probability': 'false',
-                'image': imageData
-            },
-            // header: {
-            //   'content-type': 'application/json' // 默认值
-            // },
+            data: 'detect_direction=false&detect_language=false&paragraph=false&probability=false&image=' + encodeURIComponent(imageData),
             success(res) {
                 console.log(res.data)
                 resolve(res.data)
@@ -45,11 +19,6 @@ function runOCRFn(imageData) {
             }
         })
     })
-
-    // request(options, function (error, response) {
-    //     if (error) throw new Error(error);
-    //     console.log(response.body);
-    // });
 }
 
 /**
@@ -61,26 +30,13 @@ function getAccessToken() {
         wx.request({
             url: 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=' + AK + '&client_secret=' + SK,
             method: 'POST',
-            // data: {
-            //   x: '',
-            //   y: ''
-            // },
-            // header: {
-            //   'content-type': 'application/json' // 默认值
-            // },
             success(res) {
-                // console.log(res.data.access_token)
                 resolve(res.data.access_token)
             },
             fail() {
                 reject()
             }
         })
-
-        // request(options, (error, response) => {
-        //     if (error) { reject(error) }
-        //     else { resolve(JSON.parse(response.body).access_token) }
-        // })
     })
 }
 // main();
