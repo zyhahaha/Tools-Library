@@ -1,7 +1,7 @@
 const AK = "oQAisqELmdywRfl665oClGF3"
 const SK = "blZ6gRKBcLeCHmylgh1kMfO6LT8PPGbG"
 
-function runOCRFn(imageData) {
+function runGeneralOCRFn(imageData) {
     return new Promise(async (resolve, reject) => {
         wx.request({
             url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic?access_token=' + await getAccessToken(),
@@ -10,6 +10,46 @@ function runOCRFn(imageData) {
                 'content-type': 'multipart/form-data; boundary=XXX',
             },
             data: 'detect_direction=false&detect_language=false&paragraph=false&probability=false&image=' + encodeURIComponent(imageData),
+            success(res) {
+                // console.log(res.data)
+                resolve(res.data)
+            },
+            fail() {
+                reject()
+            }
+        })
+    })
+}
+
+function runBankCardOCRFn(imageData) {
+    return new Promise(async (resolve, reject) => {
+        wx.request({
+            url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/bankcard?access_token=' + await getAccessToken(),
+            method: 'POST',
+            'headers': {
+                'content-type': 'multipart/form-data; boundary=XXX',
+            },
+            data: 'image=' + encodeURIComponent(imageData),
+            success(res) {
+                // console.log(res.data)
+                resolve(res.data)
+            },
+            fail() {
+                reject()
+            }
+        })
+    })
+}
+
+function runIdCardOCRFn(imageData) {
+    return new Promise(async (resolve, reject) => {
+        wx.request({
+            url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/idcard?access_token=' + await getAccessToken(),
+            method: 'POST',
+            'headers': {
+                'content-type': 'multipart/form-data; boundary=XXX',
+            },
+            data: 'id_card_side=front&detect_risk=false&detect_quality=false&detect_photo=false&detect_card=false&detect_direction=false&image=' + encodeURIComponent(imageData),
             success(res) {
                 // console.log(res.data)
                 resolve(res.data)
@@ -54,9 +94,10 @@ Component({
      */
     data: {
         wordsResultList: [],
-        ocrTypeText: '',
+        bankCardResultData: {},
+        ocrTypeText: '通用',
         ocrTypeVisible: false,
-        ocrTypeValue: [],
+        ocrTypeValue: ['通用'],
         ocrTypeList: [
             { label: '通用', value: '通用' },
             { label: '银行卡', value: '银行卡' }
@@ -71,14 +112,14 @@ Component({
             this.setData({ ocrTypeVisible: true });
         },
         onColumnChange(e) {
-            console.log('picker pick:', e);
+            // console.log('picker pick:', e);
         },
 
         onPickerChange(e) {
             const { key } = e.currentTarget.dataset;
             const { value } = e.detail;
 
-            console.log('picker change:', e.detail);
+            // console.log('picker change:', e.detail);
             this.setData({
                 [`${key}Visible`]: false,
                 [`${key}Value`]: value,
@@ -88,8 +129,8 @@ Component({
 
         onPickerCancel(e) {
             const { key } = e.currentTarget.dataset;
-            console.log(e, '取消');
-            console.log('picker1 cancel:');
+            // console.log(e, '取消');
+            // console.log('picker1 cancel:');
             this.setData({
                 [`${key}Visible`]: false,
             });
@@ -111,13 +152,23 @@ Component({
                     const base64 = fileManager.readFileSync(tempFilePaths, 'base64');
                     // console.log('=============================', base64);
 
-                    runOCRFn(base64).then(res => {
-                        // console.log(res)
-                        const wordsResultList = res.words_result
-                        this.setData({
-                            wordsResultList
+                    if (this.data.ocrTypeValue[0] === '通用') {
+                        runGeneralOCRFn(base64).then(res => {
+                            // console.log(res)
+                            const wordsResultList = res.words_result
+                            this.setData({
+                                wordsResultList
+                            })
                         })
-                    })
+                    } else if (this.data.ocrTypeValue[0] === '银行卡') {
+                        runBankCardOCRFn(base64).then(res => {
+                            // console.log(res)
+                            const result = res.result
+                            this.setData({
+                                bankCardResultData: result
+                            })
+                        })
+                    }                    
                 }
             })
 

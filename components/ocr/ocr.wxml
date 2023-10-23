@@ -13,12 +13,37 @@
     >
         <t-picker-item options="{{ocrTypeList}}" />
     </t-picker>
-    <!-- <view class="barcode-title">条形码 / 二维码 / 解析</view> -->
+    <!-- 扫描 -->
     <t-icon name="scan" size="200rpx" data-name="scan" bind:click="onScanCode" />
-    <view wx:for="{{wordsResultList}}" wx:key="index">
-        <view class="scan-result">{{ item.words }}</view>
+    <!-- 识别结果 -->
+    <view wx:if="{{ocrTypeValue[0] === '通用'}}">
+        <view wx:for="{{wordsResultList}}" wx:key="index">
+            <view class="scan-result">{{ item.words }}</view>
+            <view style="padding-top: 20rpx; text-align: center;">
+                <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{item.words}}" style="width: 200rpx;">复制</t-button>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{ocrTypeValue[0] === '银行卡' && bankCardResultData.bank_card_number}}" style="text-align: center;">
+        <view class="scan-result">卡号：{{ bankCardResultData.bank_card_number }}</view>
         <view style="padding-top: 20rpx; text-align: center;">
-            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{item.words}}" style="width: 200rpx;">复制</t-button>
+            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{bankCardResultData.bank_card_number}}" style="width: 200rpx;">复制</t-button>
+        </view>
+        <view class="scan-result">银行名称：{{ bankCardResultData.bank_name }}</view>
+        <view style="padding-top: 20rpx; text-align: center;">
+            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{bankCardResultData.bank_name}}" style="width: 200rpx;">复制</t-button>
+        </view>
+        <view class="scan-result">过期时间：{{ bankCardResultData.valid_date }}</view>
+        <view style="padding-top: 20rpx; text-align: center;">
+            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{bankCardResultData.valid_date}}" style="width: 200rpx;">复制</t-button>
+        </view>
+        <view class="scan-result">持卡人姓名：{{ bankCardResultData.holder_name }}</view>
+        <view style="padding-top: 20rpx; text-align: center;">
+            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{bankCardResultData.holder_name}}" style="width: 200rpx;">复制</t-button>
+        </view>
+        <view class="scan-result">银行卡类型：{{ bankCardResultData.bank_card_type }}</view>
+        <view style="padding-top: 20rpx; text-align: center;">
+            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{bankCardResultData.bank_card_type}}" style="width: 200rpx;">复制</t-button>
         </view>
     </view>
 </view>
