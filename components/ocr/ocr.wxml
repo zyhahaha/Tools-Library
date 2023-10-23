@@ -1,5 +1,5 @@
 <view class="barcode">
-    <t-cell class="mb-16" title="选择识别类型" arrow hover note="{{cityText}}" bind:click="onPicker" />
+    <t-cell class="mb-16" title="选择识别类型" arrow hover note="{{ocrTypeText}}" bind:click="onPicker" />
     <t-picker
         visible="{{ocrTypeVisible}}"
         value="{{ocrTypeValue}}"
