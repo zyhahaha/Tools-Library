@@ -1,5 +1,6 @@
 .barcode {
     padding: 20rpx;
+    padding-bottom: 50rpx;
 }
 
 /* .barcode-title {

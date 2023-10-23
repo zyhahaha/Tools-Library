@@ -11,7 +11,7 @@ function runOCRFn(imageData) {
             },
             data: 'detect_direction=false&detect_language=false&paragraph=false&probability=false&image=' + encodeURIComponent(imageData),
             success(res) {
-                console.log(res.data)
+                // console.log(res.data)
                 resolve(res.data)
             },
             fail() {
@@ -53,7 +53,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-        codeResult: ''
+        wordsResultList: []
     },
 
     /**
@@ -68,24 +68,31 @@ Component({
                 maxDuration: 30,
                 camera: 'back',
                 success: async (res) => {
-                    console.log(res)
-                    console.log(res.tempFiles[0].tempFilePath)
-                    console.log(res.tempFiles[0].size)
+                    // console.log(res)
+                    // console.log(res.tempFiles[0].tempFilePath)
+                    // console.log(res.tempFiles[0].size)
 
                     const tempFilePaths = res.tempFiles[0].tempFilePath
                     const fileManager = wx.getFileSystemManager();
                     const base64 = fileManager.readFileSync(tempFilePaths, 'base64');
-                    console.log('=============================', base64);
+                    // console.log('=============================', base64);
 
-                    runOCRFn(base64)
+                    runOCRFn(base64).then(res => {
+                        // console.log(res)
+                        const wordsResultList = res.words_result
+                        this.setData({
+                            wordsResultList
+                        })
+                    })
                 }
             })
 
 
         },
-        onCopyText() {
+        onCopyText(e) {
+            // console.log(e, e.detail.currentTarget.dataset.custom)
             wx.setClipboardData({
-                data: this.data.codeResult,
+                data: e.detail.currentTarget.dataset.custom,
                 success: res => {
                     wx.getClipboardData({
                         success: res => {
