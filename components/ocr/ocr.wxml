@@ -1,4 +1,18 @@
 <view class="barcode">
+    <t-cell class="mb-16" title="选择识别类型" arrow hover note="{{cityText}}" bind:click="onPicker" />
+    <t-picker
+        visible="{{ocrTypeVisible}}"
+        value="{{ocrTypeValue}}"
+        data-key="ocrType"
+        title="选择识别类型"
+        cancelBtn="取消"
+        confirmBtn="确认"
+        bindchange="onPickerChange"
+        bindpick="onColumnChange"
+        bindcancel="onPickerCancel"
+    >
+        <t-picker-item options="{{ocrTypeList}}" />
+    </t-picker>
     <!-- <view class="barcode-title">条形码 / 二维码 / 解析</view> -->
     <t-icon name="scan" size="200rpx" data-name="scan" bind:click="onScanCode" />
     <view wx:for="{{wordsResultList}}" wx:key="index">

@@ -7,7 +7,7 @@ function runOCRFn(imageData) {
             url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic?access_token=' + await getAccessToken(),
             method: 'POST',
             'headers': {
-                'content-type':'multipart/form-data; boundary=XXX',
+                'content-type': 'multipart/form-data; boundary=XXX',
             },
             data: 'detect_direction=false&detect_language=false&paragraph=false&probability=false&image=' + encodeURIComponent(imageData),
             success(res) {
@@ -53,13 +53,47 @@ Component({
      * 组件的初始数据
      */
     data: {
-        wordsResultList: []
+        wordsResultList: [],
+        ocrTypeText: '',
+        ocrTypeVisible: false,
+        ocrTypeValue: [],
+        ocrTypeList: [
+            { label: '通用', value: '通用' },
+            { label: '银行卡', value: '银行卡' }
+        ],
     },
 
     /**
      * 组件的方法列表
      */
     methods: {
+        onPicker() {
+            this.setData({ ocrTypeVisible: true });
+        },
+        onColumnChange(e) {
+            console.log('picker pick:', e);
+        },
+
+        onPickerChange(e) {
+            const { key } = e.currentTarget.dataset;
+            const { value } = e.detail;
+
+            console.log('picker change:', e.detail);
+            this.setData({
+                [`${key}Visible`]: false,
+                [`${key}Value`]: value,
+                [`${key}Text`]: value.join(' '),
+            });
+        },
+
+        onPickerCancel(e) {
+            const { key } = e.currentTarget.dataset;
+            console.log(e, '取消');
+            console.log('picker1 cancel:');
+            this.setData({
+                [`${key}Visible`]: false,
+            });
+        },
         onScanCode() {
             wx.chooseMedia({
                 count: 1,

@@ -3,6 +3,6 @@
     "projectname": "Tools-Library",
     "setting": {
         "compileHotReLoad": true,
-        "urlCheck": false
+        "urlCheck": true
     }
 }
