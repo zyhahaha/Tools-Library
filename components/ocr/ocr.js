@@ -102,6 +102,7 @@ Component({
             { label: '通用', value: '通用' },
             { label: '银行卡', value: '银行卡' }
         ],
+        bankCardTypeDict: {1: '储蓄卡', 2: '信用卡'}
     },
 
     /**

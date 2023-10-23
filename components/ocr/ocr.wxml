@@ -41,9 +41,9 @@
         <view style="padding-top: 20rpx; text-align: center;">
             <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{bankCardResultData.holder_name}}" style="width: 200rpx;">复制</t-button>
         </view>
-        <view class="scan-result">银行卡类型：{{ {1: '储蓄卡', 2: '信用卡'}[bankCardResultData.bank_card_type] }}</view>
+        <view class="scan-result">银行卡类型：{{ bankCardTypeDict[bankCardResultData.bank_card_type] }}</view>
         <view style="padding-top: 20rpx; text-align: center;">
-            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{{1: '储蓄卡', 2: '信用卡'}[bankCardResultData.bank_card_type]}}" style="width: 200rpx;">复制</t-button>
+            <t-button theme="primary" size="small" bind:tap="onCopyText" custom-dataset="{{bankCardTypeDict[bankCardResultData.bank_card_type]}}" style="width: 200rpx;">复制</t-button>
         </view>
     </view>
 </view>
